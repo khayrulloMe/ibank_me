@@ -101,5 +101,5 @@ Please take a look at the [contributing guidelines](./CONTRIBUTING.md) for a det
 Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/git-point#backer)]
 
 <a href="https://github.com/azimjonazs" target="_blank">
-  <img src="https://github.com/azimjonazs"></a>
+  <img src="https://avatars.githubusercontent.com/u/121250837?v=4"></a>
 

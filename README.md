@@ -100,6 +100,6 @@ Please take a look at the [contributing guidelines](./CONTRIBUTING.md) for a det
 
 Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/git-point#backer)]
 
-<a href="[https://opencollective.com/git-point#backers](https://github.com/azimjonazs)" target="_blank">
-  <img src="https://opencollective.com/git-point/backers.svg?width=890"></a>
+<a href="https://github.com/azimjonazs" target="_blank">
+  <img src="https://github.com/azimjonazs"></a>
 

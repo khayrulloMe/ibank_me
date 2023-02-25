@@ -102,4 +102,7 @@ Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com
 
 <a href="https://github.com/azimjonazs" target="_blank">
   <img src="https://avatars.githubusercontent.com/u/121250837?v=4"></a>
+  
+  <a href="https://github.com/khayrulloMe" target="_blank">
+  <img src="https://avatars.githubusercontent.com/u/103281697?s=96&v=4"></a>
 

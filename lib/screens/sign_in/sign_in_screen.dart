@@ -2,6 +2,9 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ibank_me/bloc/auth/sign_in/sign_in_bloc.dart';
+import 'package:ibank_me/bloc/auth/sign_in/sign_in_bloc.dart';
 import 'package:ibank_me/data/dto/auth/auth_request/sign_in_request.dart';
 import 'package:ibank_me/data/dto/auth/auth_request/sign_up_request.dart';
 import 'package:ibank_me/screens/sign_in/password/password_screen.dart';
@@ -25,7 +28,9 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        elevation: 0,
+      ),
       body: Container(
         margin: const EdgeInsets.only(
           right: 24,
@@ -48,9 +53,8 @@ class _SignInScreenState extends State<SignInScreen> {
               ],
             ),
             SubmitButton(
-              onClickContinue: () async {
-                await AuthApi(Dio(BaseOptions(baseUrl: "http://206.189.128.74/api")))
-                    .signIn(SignInRequest(phoneNumber: "+998900909636", password: "qwerty12345"));
+              onClickContinue: (){
+                Navigator.pushNamed(context, PasswordScreen.route, arguments: {"number": "$code${controller.text}"});
               },
             )
           ],

@@ -1,6 +1,21 @@
 part of 'sign_in_bloc.dart';
 
 @immutable
-abstract class SignInState {}
+class SignInState {
+  final Status status;
+  final String message;
 
-class SignInInitial extends SignInState {}
+  const SignInState({this.status = Status.initial, this.message = ""});
+
+  SignInState copyWith({
+    Status? status,
+    String? message,
+  }) {
+    return SignInState(
+      status: status ?? this.status,
+      message: message ?? this.message,
+    );
+  }
+}
+
+enum Status { initial, loading, success, fail }

@@ -100,7 +100,9 @@ class SubmitButton extends StatelessWidget {
         width: double.infinity,
         decoration: const BoxDecoration(color: Color.fromARGB(255, 201, 184, 255), borderRadius: BorderRadius.all(Radius.circular(15))),
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+        margin: const EdgeInsets.symmetric(vertical: 8),
         child: Text(
+
           "Continue",
           textAlign: TextAlign.center,
           style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 18, fontWeight: FontWeight.w600),

@@ -67,7 +67,8 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
           AppKeyboard(stringValue: (value) {
             setState(() {});
             if (value.length == 4&&value=="1221") {
-              Navigator.pushReplacementNamed(context, HomeScreen.route);
+               Navigator.pushNamedAndRemoveUntil(context, HomeScreen.route,(Route<dynamic> route) => false);
+
             }
             return _pinCode = value;
           })

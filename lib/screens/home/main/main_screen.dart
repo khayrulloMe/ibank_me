@@ -27,16 +27,16 @@ class _MainScreenState extends State<MainScreen> {
         return AuthApi(Dio(BaseOptions(baseUrl: "http://206.189.128.74/api")))
             .signUp(SignUpRequest(phoneNumber: "+998900901116", password: "qwerty12345", firstName: 'ee', lastName: 'ee'));
       },
-      child:  CustomScrollView(
+      child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
-            child: Column(
-              children:  const [
-                Padding(padding: EdgeInsets.symmetric(horizontal: 24)),
-StackWidgetMain()
-              ],
-            )
-          )
+              child: Column(
+            children: const [
+              Padding(padding: EdgeInsets.symmetric(horizontal: 24)),
+
+              StackWidgetMain()
+            ],
+          ))
         ],
       ),
     );

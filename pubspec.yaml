@@ -39,6 +39,7 @@ flutter:
     - assets/uzum.png
     - assets/payment.png
     - assets/cashback.png
+    - assets/float.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

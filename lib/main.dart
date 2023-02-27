@@ -6,8 +6,6 @@ import 'package:ibank_me/screens/sign_in/sign_in_screen.dart';
 import 'package:ibank_me/screens/sign_in_verify/sign_in_verify.dart';
 import 'package:ibank_me/screens/splash/splash_screen.dart';
 
-
-
 void main() {
   runApp(const MyApp());
 }
@@ -33,7 +31,7 @@ class MyApp extends StatelessWidget {
         SignInVerifyScreen.route: (context) => const SignInVerifyScreen(),
         PinCodeScreen.route: (context) => const PinCodeScreen()
       },
-      initialRoute: SignInScreen.route,
+      initialRoute: HomeScreen.route,
     );
   }
 }

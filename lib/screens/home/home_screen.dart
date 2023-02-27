@@ -1,62 +1,79 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
+import 'package:ibank_me/screens/home/chat/chat_screen.dart';
+import 'package:ibank_me/screens/home/main/main_screen.dart';
+import 'package:ibank_me/screens/home/menu/menu_screen.dart';
+import 'package:ibank_me/screens/home/payment/payment_screen.dart';
+import 'package:ibank_me/screens/home/transfer/transfer_screen.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
-
 import '../../data/dto/auth/auth_request/sign_up_request.dart';
 import '../../data/service/auth/auth_api.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   static const String route = "/home";
 
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
-      appBar: AppBar(
-          backgroundColor: Theme.of(context).primaryColor,
-          title: Row(
-            children: [],
-          )),
-      body: LiquidPullToRefresh(
-
-        showChildOpacityTransition: false,
-        color: Theme.of(context).primaryColor,
-        height: 180,
-        onRefresh: () {
-          return AuthApi(Dio(BaseOptions(baseUrl: "http://206.189.128.74/api")))
-              .signUp(SignUpRequest(phoneNumber: "+998900901116", password: "qwerty12345", firstName: 'ee', lastName: 'ee'));
-        },
-        child: const CustomScrollView(
-
-          slivers: [
-            SliverToBoxAdapter(
-              child: FakeCard(),
-            )
-          ],
-        ),
-      ),
-    );
-  }
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class FakeCard extends StatelessWidget {
-  const FakeCard({Key? key}) : super(key: key);
+class _HomeScreenState extends State<HomeScreen> {
+  final screens = <Widget>[const MainScreen(), const TransferScreen(), const PaymentScreen(), const ChatScreen(), const MenuScreen()];
+  var index = 0;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Theme.of(context).primaryColor,
-      child: GlassContainer.clearGlass(
-        padding: const EdgeInsets.all(16),
-        borderRadius: const BorderRadius.only(topLeft: Radius.circular(16), topRight: Radius.circular(16)),
-        margin: const EdgeInsets.only(right: 24, left: 24, top: 24),
-        height: 200,
-        width: double.infinity,
-        child: const Text("Depending on your requirements you can tweak with the properties and create awesome glass widgets"),
-      ),
-    );
+    return Scaffold(
+        bottomNavigationBar: NavigationBarTheme(
+          data: const NavigationBarThemeData(height: 60, indicatorColor: Colors.transparent),
+          child: NavigationBar(
+            selectedIndex: index,
+            onDestinationSelected: (i) {
+              setState(() {
+                index = i;
+              });
+            },
+            destinations: [
+              NavigationDestination(
+                  icon: Image.asset(
+                    "assets/uzum.png",
+                    width: 24,
+                    color: Colors.grey.shade500,
+                  ),
+                  selectedIcon: Image.asset(
+                    "assets/uzum.png",
+                    width: 24,
+                    color: Colors.deepPurple,
+                  ),
+                  label: "home"),
+              NavigationDestination(
+                  icon: Image.asset(
+                    "assets/transfer.png",
+                    width: 24,
+                    color: Colors.grey.shade500,
+                  ),
+                  selectedIcon: Image.asset(
+                    "assets/transfer.png",
+                    width: 24,
+                    color: Colors.deepPurple,
+                  ),
+                  label: "home"),
+              const NavigationDestination(icon: Icon(Icons.payment), label: "home"),
+              const NavigationDestination(icon: Icon(Icons.chat), label: "home"),
+              const NavigationDestination(icon: Icon(Icons.menu), label: "home"),
+            ],
+          ),
+        ),
+        backgroundColor: Theme.of(context).primaryColor,
+        appBar: AppBar(
+            backgroundColor: Theme.of(context).primaryColor,
+            title: Row(
+              children: [],
+            )),
+        body: screens[index]);
   }
 }
+
+

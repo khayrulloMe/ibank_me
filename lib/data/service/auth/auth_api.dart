@@ -37,11 +37,8 @@ class AuthApi {
     final response = await _dio.post(
       "/auth/sign-in",
       data: signInRequest.toJson(),
-      options: Options(headers: {
-        HttpHeaders.contentTypeHeader: "application/json",
-      }),
     );
-    print(response.data);
+
     return response;
   }
 }

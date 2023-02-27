@@ -31,6 +31,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
         return Scaffold(
           appBar: AppBar(),
           body: Builder(builder: (context) {
+
             switch (state.status) {
               case Status.initial:
                 return Container(
@@ -62,6 +63,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                     ],
                   ),
                 );
+
               case Status.loading:
                 return const Center(child: CircularProgressIndicator());
               case Status.success:

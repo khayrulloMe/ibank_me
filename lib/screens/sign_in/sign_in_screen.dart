@@ -1,16 +1,7 @@
-import 'dart:io';
-
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ibank_me/bloc/auth/sign_in/sign_in_bloc.dart';
-import 'package:ibank_me/bloc/auth/sign_in/sign_in_bloc.dart';
-import 'package:ibank_me/data/dto/auth/auth_request/sign_in_request.dart';
-import 'package:ibank_me/data/dto/auth/auth_request/sign_up_request.dart';
 import 'package:ibank_me/screens/sign_in/password/password_screen.dart';
 import 'package:ibank_me/screens/sign_in/widgets.dart';
 
-import '../../data/service/auth/auth_api.dart';
 
 class SignInScreen extends StatefulWidget {
   static const String route = "/signIn";
@@ -53,7 +44,7 @@ class _SignInScreenState extends State<SignInScreen> {
               ],
             ),
             SubmitButton(
-              onClickContinue: (){
+              onClickContinue: () {
                 Navigator.pushNamed(context, PasswordScreen.route, arguments: {"number": "$code${controller.text}"});
               },
             )

@@ -1,14 +1,9 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:glass_kit/glass_kit.dart';
 import 'package:ibank_me/screens/home/chat/chat_screen.dart';
 import 'package:ibank_me/screens/home/main/main_screen.dart';
 import 'package:ibank_me/screens/home/menu/menu_screen.dart';
 import 'package:ibank_me/screens/home/payment/payment_screen.dart';
 import 'package:ibank_me/screens/home/transfer/transfer_screen.dart';
-import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
-import '../../data/dto/auth/auth_request/sign_up_request.dart';
-import '../../data/service/auth/auth_api.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String route = "/home";
@@ -75,5 +70,3 @@ class _HomeScreenState extends State<HomeScreen> {
         body: screens[index]);
   }
 }
-
-

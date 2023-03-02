@@ -26,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
         bottomNavigationBar: NavigationBarTheme(
           data: const NavigationBarThemeData(height: 60, indicatorColor: Colors.transparent),
           child: NavigationBar(
@@ -67,11 +68,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         backgroundColor: Theme.of(context).primaryColor,
-        appBar: AppBar(
-            backgroundColor: Theme.of(context).primaryColor,
-            title: Row(
-              children: [],
-            )),
         body: screens[index]);
   }
 }

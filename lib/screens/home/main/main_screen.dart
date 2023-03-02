@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
+import 'package:ibank_me/data/source/remote/api/auth_api.dart';
+import 'package:ibank_me/data/source/remote/request/auth/SignUpRequest.dart';
 import 'package:ibank_me/screens/home/main/stack_widget.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 
-import '../../../data/dto/auth/auth_request/sign_up_request.dart';
-import '../../../data/service/auth/auth_api.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);

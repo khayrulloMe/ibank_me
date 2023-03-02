@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
-import 'package:ibank_me/data/dto/auth/auth_request/sign_in_request.dart';
-import 'package:ibank_me/data/service/auth/auth_api.dart';
+import 'package:ibank_me/data/source/remote/api/auth_api.dart';
+import 'package:ibank_me/data/source/remote/request/auth/SignInRequest.dart';
 import 'package:meta/meta.dart';
 
 part 'sign_in_event.dart';
@@ -24,15 +24,12 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
       (event, emit) async {
         emit(state.copyWith(status: Status.loading));
         final response = await _api.signIn(event.signInRequest);
-        if (response.statusCode != null) {
+        if (response != null && response.statusCode != null) {
           if (response.statusCode! >= 200 && response.statusCode! < 300) {
             emit(state.copyWith(status: Status.success));
           }
         }
-
-
       },
     );
-
   }
 }

@@ -1,4 +1,3 @@
-
 class SignInResponse {
   SignInResponse({
     required this.accessToken,
@@ -7,10 +6,10 @@ class SignInResponse {
   final String accessToken;
 
   factory SignInResponse.fromJson(Map<String, dynamic> json) => SignInResponse(
-    accessToken: json["access_token"]??"",
-  );
+        accessToken: json["access_token"] ?? "",
+      );
 
   Map<String, dynamic> toJson() => {
-    "access_token": accessToken,
-  };
+        "access_token": accessToken,
+      };
 }

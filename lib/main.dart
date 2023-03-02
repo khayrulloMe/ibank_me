@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         SignInVerifyScreen.route: (context) => const SignInVerifyScreen(),
         PinCodeScreen.route: (context) => const PinCodeScreen()
       },
-      initialRoute: HomeScreen.route,
+      initialRoute: SignInScreen.route,
     );
   }
 }

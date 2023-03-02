@@ -20,7 +20,12 @@ class _StackWidgetMainState extends State<StackWidgetMain> {
           child: MainPart(),
         ),
         Container(
-          decoration: BoxDecoration(color: Colors.blueGrey.shade50, borderRadius: const BorderRadius.all(Radius.circular(30))),
+          decoration: BoxDecoration(
+            color: Colors.blueGrey.shade50,
+            borderRadius: const BorderRadius.all(
+              Radius.circular(30),
+            ),
+          ),
           margin: const EdgeInsets.symmetric(vertical: 175),
           child: IconButton(
               onPressed: () {},

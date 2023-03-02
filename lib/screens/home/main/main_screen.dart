@@ -22,6 +22,7 @@ class _MainScreenState extends State<MainScreen> {
           centerTitle: true,
           backgroundColor: Theme.of(context).primaryColor,
           title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
                   flex: 7,
@@ -45,7 +46,7 @@ class _MainScreenState extends State<MainScreen> {
                           ),
                           Text(
                             "search",
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: Colors.white,fontSize: 16),
                           )
                         ],
                       ),

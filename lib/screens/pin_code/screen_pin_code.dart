@@ -55,7 +55,7 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
           ),
           GestureDetector(
             onTap: () {
-              print("click  PIN qayta o'rnatish"); //TODO
+              print("click  PIN qayta o'rnatish");
             },
             child: const Center(
               child: Text(
@@ -66,7 +66,7 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
           ),
           AppKeyboard(stringValue: (value) {
             setState(() {});
-            if (value.length == 4&&value=="1221") {
+            if (value.length == 4&&value=="7777") {
                Navigator.pushNamedAndRemoveUntil(context, HomeScreen.route,(Route<dynamic> route) => false);
 
             }

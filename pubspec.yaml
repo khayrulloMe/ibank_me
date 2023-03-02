@@ -13,7 +13,6 @@ dependencies:
   dio: ^5.0.0
   google_fonts: ^4.0.3
   intl: ^0.17.0
-  intl_phone_number_input: ^0.7.2
   mask_text_input_formatter: ^2.4.0
   flutter_otp_text_field: ^1.1.1
   intl_phone_field: ^3.1.0
@@ -40,6 +39,7 @@ flutter:
     - assets/payment.png
     - assets/cashback.png
     - assets/float.png
+    - assets/any/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

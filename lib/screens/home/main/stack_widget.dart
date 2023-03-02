@@ -85,7 +85,122 @@ class MainPart extends StatelessWidget {
             child: Row(
               children: const [Expanded(child: CashbackItem()), Expanded(child: PaymentItem())],
             ),
-          )
+          ),
+          FastAccess(),
+          LocalPayments()
+        ],
+      ),
+    );
+  }
+}
+
+class FastAccess extends StatelessWidget {
+  const FastAccess({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+            padding: const EdgeInsets.only(left: 16),
+            child: const Text(
+              "Fast access",
+              style: TextStyle(color: Colors.blueGrey, fontSize: 18),
+            )),
+        SizedBox(
+          width: double.infinity,
+          height: 120,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: const [
+              FastAccessItem(
+                item: Icons.home_filled,
+                title: 'home',
+              ),
+              FastAccessItem(
+                item: Icons.attractions_outlined,
+                title: 'home',
+              ),
+              FastAccessItem(
+                item: Icons.qr_code_2,
+                title: 'home',
+              ),
+              FastAccessItem(
+                item: Icons.currency_exchange,
+                title: 'home',
+              ),
+              FastAccessItem(
+                item: Icons.font_download_sharp,
+                title: 'home',
+              ),
+              FastAccessItem(
+                item: Icons.home_filled,
+                title: 'home',
+              ),
+              FastAccessItem(
+                item: Icons.attractions_outlined,
+                title: 'home',
+              ),
+              FastAccessItem(
+                item: Icons.qr_code_2,
+                title: 'home',
+              ),
+              FastAccessItem(
+                item: Icons.currency_exchange,
+                title: 'home',
+              ),
+              FastAccessItem(
+                item: Icons.font_download_sharp,
+                title: 'home',
+              ),
+              FastAccessItem(
+                item: Icons.home_filled,
+                title: 'home',
+              ),
+              FastAccessItem(
+                item: Icons.attractions_outlined,
+                title: 'home',
+              ),
+              FastAccessItem(
+                item: Icons.qr_code_2,
+                title: 'home',
+              ),
+              FastAccessItem(
+                item: Icons.currency_exchange,
+                title: 'home',
+              ),
+              FastAccessItem(
+                item: Icons.font_download_sharp,
+                title: 'home',
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class FastAccessItem extends StatelessWidget {
+  final IconData item;
+  final String title;
+
+  const FastAccessItem({Key? key, required this.item, required this.title}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: const BoxDecoration(color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(25))),
+            child: Icon(item),
+          ),
+          Text(title)
         ],
       ),
     );
@@ -167,6 +282,104 @@ class PaymentItem extends StatelessWidget {
           ),
         )
       ],
+    );
+  }
+}
+
+class LocalPayments extends StatelessWidget {
+  const LocalPayments({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          padding: const EdgeInsets.only(left: 16),
+          child: const Text(
+            "Local Payments",
+            style: TextStyle(color: Colors.blueGrey, fontSize: 18),
+          ),
+        ),
+        SizedBox(
+          width: double.infinity,
+          height: 120,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: const [
+              LocalPayment(
+                image: 'assets/any/any.png',
+                title: 'optimal',
+                cashback: 12,
+              ),
+              LocalPayment(
+                image: 'assets/any/any1.jpeg',
+                title: 'optimal',
+                cashback: 12,
+              ),
+              LocalPayment(
+                image: 'assets/any/any3.jpeg',
+                title: 'optimal',
+                cashback: 12,
+              ),
+              LocalPayment(
+                image: 'assets/any/any4.png',
+                title: 'optimal',
+                cashback: 12,
+              ),
+            ],
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class LocalPayment extends StatelessWidget {
+  final String image;
+  final String title;
+  final int cashback;
+
+  const LocalPayment({Key? key, required this.image, required this.title, required this.cashback}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 290,
+      margin: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(8),
+      decoration: const BoxDecoration(color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(20))),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          ClipRRect(
+            clipBehavior: Clip.antiAlias,
+            borderRadius: const BorderRadius.all(
+              Radius.circular(25),
+            ),
+            child: Image.asset(
+              image,
+              width: 100,
+              height: 70,
+            ),
+          ),
+          Text(
+            title,
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+          ),
+          Transform.rotate(
+            angle: -0.3,
+            child: Container(
+                padding: const EdgeInsets.all(4),
+                decoration: BoxDecoration(color: Colors.green.shade100, borderRadius: BorderRadius.circular(10)),
+                child: Text(
+                  "$cashback%",
+                  style: const TextStyle(color: Colors.green, fontSize: 16),
+                )),
+          )
+        ],
+      ),
     );
   }
 }
